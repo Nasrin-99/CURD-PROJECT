@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Content</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="details-page">
+
+<header class="header">
+    <div class="header-container">
+        <h2 class="logo">Edit Content</h2>
+        <nav class="nav">
+            <a href="http://localhost:8080/posts">Home</a>
+        </nav>
+    </div>
+</header>
+
+<main class="details-container">
+    <div class="details-box">
+
+        <h2 class="page-title"><%= post.title %></h2>
+
+        <% if (post.imageUrl) { %>
+            <div class="details-image">
+                <img src="<%= post.imageUrl %>" alt="Post image">
+            </div>
+        <% } %>
+
+        <!-- ONLY CONTENT IS EDITABLE -->
+        <form action="/posts/<%= post.id %>?_method=PATCH" method="POST" class="post-form">
+
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea
+                    id="content"
+                    name="content"
+                    rows="6"
+                    required
+                ><%= post.content %></textarea>
+            </div>
+
+            <button type="submit" class="btn create">Update Content</button>
+        </form>
+
+    </div>
+</main>
+
+</body>
+</html>

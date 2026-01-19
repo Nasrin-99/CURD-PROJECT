@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <h2 class="logo">CRUD App</h2>
+
+        <nav class="nav">
+            <a href="/signup">Create an account</a>
+        </nav>
+    </div>
+</header>
+<!-- Main Content -->
+<main class="container">
+    <h1>My Posts</h1>
+
+    <% if (posts.length === 0) { %>
+        <p class="empty">No posts yet</p>
+    <% } %>
+
+    <div class="grid">
+        <% for (post of posts) { %>
+            <div class="card">
+
+                <% if (post.imageUrl) { %>
+                    <div class="image-box">
+                        <img src="<%= post.imageUrl %>" alt="Post image">
+                    </div>
+                <% } %>
+
+                <div class="card-content">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.content %></p>
+
+                    <div class="actions">
+
+                        <!-- NEW: View Details -->
+                        <a href="http://localhost:8080/posts/<%= post.id %>" class="btn view">
+                            View Details
+                        </a>
+
+                        <a href="http://localhost:8080/posts/<%= post.id %>/edit" class="btn edit">
+                            Edit
+                        </a>
+
+                        <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+                            <button class="btn delete">Delete</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        <% } %>
+    </div>
+
+    <div class="create-box">
+        <a href="/posts/create" class="btn create">Create New Post</a>
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 CRUD App. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Details</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="details-page">
+
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <h2 class="logo">CRUD App</h2>
+        <nav class="nav">
+            <a href="http://localhost:8080/posts">Home</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="details-container">
+
+    <div class="details-box">
+        <h2 class="page-title">Post Details</h2>
+
+        <details open class="post-details">
+            <summary>
+                <strong><%= post.title %></strong>
+            </summary>
+
+            <% if (post.imageUrl) { %>
+                <div class="details-image">
+                    <img src="<%= post.imageUrl %>" alt="Post image">
+                </div>
+            <% } %>
+
+            <div class="details-content">
+                <p><strong>ID:</strong> <%= post.id %></p>
+                <p><strong>Content:</strong></p>
+                <p><%= post.content %></p>
+            </div>
+        </details>
+
+    </div>
+
+</main>
+
+
+
+
+</body>
+</html>
