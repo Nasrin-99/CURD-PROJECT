@@ -1,4 +1,14 @@
-![Node.js CI](https://github.com/Nasrin-99/CURD-PROJECT/actions/workflows/nodejs-ci.yml/badge.svg?branch=new-root)
+## 🔄 Continuous Integration (CI)
+
+This project uses **GitHub Actions** for Continuous Integration.
+
+![Workflow file](https://github.com/Nasrin-99/CURD-PROJECT/tree/new-root/.github/workflows/npm-publish.yml)
+
+The CI automatically:
+- Installs dependencies
+- Runs tests
+- Verifies Node.js compatibility
+
 
 # 📘 README.md
 
