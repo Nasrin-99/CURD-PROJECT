@@ -1,4 +1,6 @@
-# 📘 README.md (FOR GITHUB)
+![Node.js CI](https://github.com/Nasrin-99/CURD-PROJECT/actions/workflows/nodejs-ci.yml/badge.svg?branch=new-root)
+
+# 📘 README.md
 
 ```md
 # RESTful CRUD Application – Express.js
